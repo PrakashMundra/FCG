@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FCGTask</string>
+    <string name="no_data_available">No Data Available</string>
+    <string name="profiles">Profiles</string>
+    <string name="add_fav">Add to favourites</string>
+    <string name="remove_fav">Remove from favourites</string>
+</resources>

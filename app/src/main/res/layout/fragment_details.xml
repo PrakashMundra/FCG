@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.fcgtask.viewmodel.DetailsModel" />
+
+        <variable
+            name="details"
+            type="com.fcgtask.data.model.ProfileDetails" />
+    </data>
+
+    <ScrollView
+        style="@style/MatchWidth"
+        android:fillViewport="true"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            style="@style/Match"
+            android:orientation="vertical"
+            android:padding="@dimen/activity_margin">
+
+            <com.fcgtask.widget.GridImage
+                style="@style/MatchWidth"
+                android:contentDescription="@null"
+                app:imageUrl="@{details.profile_picture}" />
+
+            <Button
+                android:id="@+id/add_fav"
+                style="@style/MatchWidth"
+                android:layout_marginTop="@dimen/activity_margin"
+                android:text="@string/add_fav"
+                android:visibility="@{viewModel.isFav?View.GONE:View.VISIBLE}" />
+
+            <Button
+                android:id="@+id/remove_fav"
+                style="@style/MatchWidth"
+                android:layout_marginTop="@dimen/activity_margin"
+                android:text="@string/remove_fav"
+                android:visibility="@{viewModel.isFav?View.VISIBLE:View.GONE}" />
+        </LinearLayout>
+    </ScrollView>
+</layout>

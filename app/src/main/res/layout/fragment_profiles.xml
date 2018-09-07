@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.fcgtask.viewmodel.ProfilesModel" />
+    </data>
+
+    <RelativeLayout style="@style/Match">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            style="@style/Match"
+            android:fadingEdge="none"
+            android:overScrollMode="never"
+            android:visibility="@{viewModel.isEmpty?View.GONE:View.VISIBLE}" />
+
+        <TextView
+            android:id="@+id/no_data_tv"
+            style="@style/Wrap"
+            android:layout_centerInParent="true"
+            android:text="@string/no_data_available"
+            android:visibility="@{viewModel.isEmpty?View.VISIBLE:View.GONE}" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="@style/Wrap"
+            android:layout_centerInParent="true"
+            android:visibility="@{viewModel.loading?View.VISIBLE:View.GONE}" />
+    </RelativeLayout>
+</layout>
